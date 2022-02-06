@@ -1,0 +1,214 @@
+<core:View xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="zzsimpleform2.Display"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout">
+	<Page title="Order Title">
+
+		<subHeader>
+			<Bar>
+				<contentRight>
+					<SearchField search="handleSearch/" />
+				</contentRight>
+			</Bar>
+		</subHeader>
+
+		<content>
+
+			<HBox width="100%">
+
+				<VBox width="50%">
+
+					<f:SimpleForm id="mySimpleForm" title="Simple Form"
+						layout="ResponsiveGridLayout" labelSpanM="2">
+
+						<Label text="Order" />
+						<Input value="{/order}" placeholder="12131414">
+							<layoutData>
+								<l:GridData span="L3 M3 S4" />
+							</layoutData>
+						</Input>
+
+
+
+						<Label text="Item No" />
+						<Input value="{/itemno}" placeholder="10">
+							<layoutData>
+								<l:GridData span="L3 M3 S4" />
+							</layoutData>
+						</Input>
+
+
+						<Label text="Material" />
+						<Input value="{/material}" placeholder="Material">
+							<layoutData>
+								<l:GridData span="L3 M3 S4" />
+							</layoutData>
+						</Input>
+
+
+						<Label text="Quantiy" />
+						<Input value="{/quantity}" placeholder="5">
+							<layoutData>
+								<l:GridData span="L3 M3 S4" />
+							</layoutData>
+						</Input>
+
+						<Label text="Amount" />
+						<Input value="{/amount}" placeholder="2000">
+							<layoutData>
+								<l:GridData span="L3 M3 S4" />
+							</layoutData>
+						</Input>
+
+						<Label text="Curreny" />
+						<Input value="{/currency}" placeholder="TRY">
+							<layoutData>
+								<l:GridData span="L3 M3 S4" />
+							</layoutData>
+						</Input>
+
+						<core:Icon src="sap-icon://my-sales-order" size="50em"></core:Icon>
+						<core:Icon src="sap-icon://credit-card" size="50em"></core:Icon>
+
+						<Label text="Order Status" />
+						<RadioButtonGroup columns="2" width="100%">
+
+							<buttons>
+
+								<RadioButton id="completedId" text="Completed" />
+								<RadioButton id="waitingId"
+									text="Waiting to Product" />
+
+							</buttons>
+
+						</RadioButtonGroup>
+
+						<Label text="Product Type" />
+						<Select>
+							<items>
+								<core:Item text="telefon" />
+								<core:Item text="bilgisayar" />
+								<core:Item text="PS" />
+								<core:Item text="TV" />
+								<core:Item text="klavye" />
+							</items>
+							<layoutData>
+								<l:GridData span="L4 M3 S4" />
+							</layoutData>
+						</Select>
+
+						<Label text="Comment" />
+						<TextArea value="" rows="3"
+							placeholder="You can write here.">
+							<layoutData>
+								<l:GridData span="L4 M3 S4" />
+							</layoutData>
+
+						</TextArea>
+
+						<Label text="Order Date:" />
+						<DatePicker>
+							<layoutData>
+								<l:GridData span="L4 M3 S4" />
+							</layoutData>
+						</DatePicker>
+
+
+
+					</f:SimpleForm>
+
+				</VBox>
+
+
+				<VBox width="50%" id="idOrderData" visible="false">
+
+					<HBox width="100%" justifyContent="Center"
+						class="sapUitinyMargin">
+
+						<HBox width="50%" justifyContent="End">
+							<Label text="Order no:"></Label>
+						</HBox>
+
+						<HBox width="50%" justifyContent="Start">
+							<Text text="{/order}"></Text>
+						</HBox>
+
+					</HBox>
+
+					<HBox width="100%" justifyContent="Center"
+						class="sapUitinyMargin">
+
+						<HBox width="50%" justifyContent="End">
+							<Label text="Item no:"></Label>
+						</HBox>
+
+						<HBox width="50%" justifyContent="Start">
+							<Text text="{/itemno}"></Text>
+						</HBox>
+					</HBox>
+
+					<HBox width="100%" justifyContent="Center"
+						class="sapUitinyMargin">
+						<HBox width="50%" justifyContent="End">
+							<Label text="Material:"></Label>
+						</HBox>
+
+						<HBox width="50%" justifyContent="Start">
+							<Text text="{/material}"></Text>
+						</HBox>
+					</HBox>
+
+					<HBox width="100%" justifyContent="Center"
+						class="sapUitinyMargin">
+						<HBox width="50%" justifyContent="End">
+							<Label text="Quantity:"></Label>
+						</HBox>
+
+						<HBox width="50%" justifyContent="Start">
+							<Text text="{/quantity}"></Text>
+						</HBox>
+					</HBox>
+
+					<HBox width="100%" justifyContent="Center"
+						class="sapUitinyMargin">
+						<HBox width="50%" justifyContent="End">
+							<Label text="Amount:"></Label>
+						</HBox>
+
+						<HBox width="50%" justifyContent="Start">
+							<Text text="{/amount}"></Text>
+						</HBox>
+					</HBox>
+
+					<HBox width="100%" justifyContent="Center"
+						class="sapUitinyMargin">
+						<HBox width="50%" justifyContent="End">
+							<Label text="Currency:"></Label>
+						</HBox>
+
+						<HBox width="50%" justifyContent="Start">
+							<Text text="{/currency}"></Text>
+						</HBox>
+					</HBox>
+
+				</VBox>
+			</HBox>
+
+		</content>
+
+		<footer>
+			<Toolbar>
+				<content>
+					<ToolbarSpacer></ToolbarSpacer>
+					<Button text="Save" type="Accept" press="handleSave" />
+					<Button text="Cancel" type="Reject" press="handleReject" />
+				</content>
+			</Toolbar>
+
+		</footer>
+
+
+
+	</Page>
+</core:View>
