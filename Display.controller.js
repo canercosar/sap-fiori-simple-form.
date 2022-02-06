@@ -1,4 +1,4 @@
-sap.ui.controller("zzorderform2.Display", {
+sap.ui.controller("zzsimpleform2.Display", {
 
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.
